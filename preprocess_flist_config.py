@@ -84,9 +84,9 @@ if __name__ == "__main__":
         wavs = [os.path.join(args.source_dir, speaker, i)for i in os.listdir(os.path.join(args.source_dir, speaker))]
         wavs = [i for i in wavs if i.endswith("wav")]
         shuffle(wavs)
-        train += wavs[2:-10]
-        val += wavs[:2]
-        test += wavs[-10:]
+        train += wavs[50:-50]
+        val += wavs[:50]
+        test += wavs[-50:]
     n_speakers = len(spk_dict.keys())*2
     shuffle(train)
     shuffle(val)
